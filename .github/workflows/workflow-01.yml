@@ -30,20 +30,12 @@ jobs:
 
       - name: Set Terraform
         uses: hashicorp/setup-terraform@v3
-
-      - name: Cat files
-        run: |
-          cat providers.tf
         
       - name: Terraform fmt
         id: fmt
         run: |          
-          terraform fmt -recursive
+          terraform fmt -check -recursive
         continue-on-error: true
-
-      - name: Cat files
-        run: |
-          cat providers.tf
 
       - name: output fmt
         run: echo "${{ steps.fmt.outcome }}"
