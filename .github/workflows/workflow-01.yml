@@ -27,7 +27,9 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: List files
-        run: ls -l
+        run: |
+          git pull
+          ls -l
         
       - name: Terraform fmt
         id: fmt
