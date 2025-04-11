@@ -24,7 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
+        name: Checout files       
+        with:
+          ref: "main"
+      - name: Set Terraform
+        uses: hashicorp/setup-terraform@v3
 
       - name: List files
         run: |
