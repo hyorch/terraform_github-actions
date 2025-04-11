@@ -36,11 +36,15 @@ jobs:
         run: terraform fmt -check -recursive
         continue-on-error: true
 
-      - name: output fmt
+      - name: Fail fmt
         if: "${{steps.fmt.outcome == 'failure'}}"
         run: |
-          echo "Terraform fmt failed. Review theses files:"       
+          echo "Terraform fmt failed. Review these files:"       
           echo "${{ steps.fmt.outputs.stdout }}"
+
+      - name: Pass fmt
+        if: "${{steps.fmt.outcome != 'failure'}}"
+        run: echo "Terraform fmt passed. No changes needed."
          
         
       # Runs a single command using the runners shell
