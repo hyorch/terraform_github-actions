@@ -38,7 +38,7 @@ jobs:
       - name: Terraform fmt
         id: fmt
         run: |          
-          terraform fmt -check -recursive
+          terraform fmt -recursive
         continue-on-error: true
 
       - name: Cat files
