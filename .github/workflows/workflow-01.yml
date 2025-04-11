@@ -28,7 +28,7 @@ jobs:
 
       - name: Terraform fmt
         id: fmt
-        run: terraform fmt -check
+        run: terraform fmt
         continue-on-error: false
 
       # Runs a single command using the runners shell
