@@ -29,10 +29,9 @@ jobs:
       - name: Set Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: List files
+      - name: Cat files
         run: |
           cat providers.tf
-          ls -l
         
       - name: Terraform fmt
         id: fmt
@@ -40,6 +39,10 @@ jobs:
           terraform version
           terraform fmt *.tf
         continue-on-error: true
+
+      - name: Cat files
+        run: |
+          cat providers.tf
 
       - name: output fmt
         run: echo "${{ steps.fmt.outcome }}"
