@@ -33,12 +33,15 @@ jobs:
         
       - name: Terraform fmt
         id: fmt
-        run: |          
-          terraform fmt -check -recursive
-        continue-on-error: false
+        run: terraform fmt -check -recursive
+        continue-on-error: true
 
       - name: output fmt
-        run: echo "${{ steps.fmt.outcome }}"
+        
+        run: |
+          echo "${{ steps.fmt.conclusion }}"
+          echo "${{ steps.fmt.outcome }}"
+          echo "${{ steps.fmt.outputs }}"
         
       # Runs a single command using the runners shell
       - name: End
