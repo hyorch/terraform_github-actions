@@ -36,7 +36,9 @@ jobs:
         
       - name: Terraform fmt
         id: fmt
-        run: terraform fmt -recursive
+        run: |
+          terraform version
+          terraform fmt *.tf
         continue-on-error: true
 
       - name: output fmt
