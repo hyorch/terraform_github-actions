@@ -31,6 +31,9 @@ jobs:
         run: terraform fmt -recursive
         continue-on-error: true
 
+      - name: output fmt
+        run: echo "${{ steps.fmt.outcome }}"
+        
       # Runs a single command using the runners shell
       - name: End
         run: |
