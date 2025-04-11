@@ -37,11 +37,14 @@ jobs:
         continue-on-error: true
 
       - name: output fmt
-        
+        if: "${{steps.fmt.outcome == 'failure'}}"
         run: |
-          echo "${{ steps.fmt.conclusion }}"
-          echo "${{ steps.fmt.outcome }}"
-          echo "${{ steps.fmt.outputs }}"
+          echo "Terraform fmt failed"          
+          echo "${{ steps.fmt.outputs.outcome }}"
+          echo "${{ steps.fmt.outputs.exitcode }}"
+          echo "${{ steps.fmt.outputs.stdout }}"
+          echo "${{ steps.fmt.outputs.stderr }}"
+         
         
       # Runs a single command using the runners shell
       - name: End
