@@ -41,6 +41,7 @@ jobs:
           echo "${{github.base_ref}}"
           echo "${{github.event.pull_request.number}}"
           echo "${{github.ref_name}}"
+          echo "${{github.ref}}"
           echo ".............................."
           git status
           echo ".............................."
@@ -49,7 +50,7 @@ jobs:
           
           git add tfplan
           git commit -m "Add tfplan"
-          git push origin HEAD:pull/${{ github.head_name }}
+          git push origin HEAD:pull/${{ github.ref_name }}
          
       - name: Add Plan Comment
         uses: actions/github-script@v6
