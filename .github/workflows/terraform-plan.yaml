@@ -32,6 +32,13 @@ jobs:
         id: plan
         run: terraform plan -no-color -input=false -out=tfplan
 
+      # push tfplan to github
+      - name: Publish tfplan file
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: tfplan       
+
       - name: Add Plan Comment
         uses: actions/github-script@v6
         env:
