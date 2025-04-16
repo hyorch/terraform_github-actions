@@ -41,15 +41,15 @@ jobs:
           echo "${{github.base_ref}}"
           echo "${{github.event.pull_request.number}}"
           echo "${{github.ref_name}}"
-                   
+          echo ".............................."
+          git status
+          echo ".............................."
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           
           git add tfplan
           git commit -m "Add tfplan"
-          git push  
-
-      #git push origin HEAD:${{ github.head_ref }}
+          git push origin HEAD:${{ github.head_ref }}
          
       - name: Add Plan Comment
         uses: actions/github-script@v6
