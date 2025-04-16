@@ -50,7 +50,7 @@ jobs:
           
           git add tfplan
           git commit -m "Add tfplan"
-          git push origin HEAD:pull/${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref}}
          
       - name: Add Plan Comment
         uses: actions/github-script@v6
