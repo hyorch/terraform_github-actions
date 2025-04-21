@@ -1,9 +1,13 @@
 # terraform_github-actions
 Terraform with Github Actions
 
-[![Terraform Plan](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-plan.yaml/badge.svg?branch=main)](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-plan.yaml)
 
 [![Terraform Apply](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-apply.yaml/badge.svg?branch=main)](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-apply.yaml)
+
+[![Terraform Apply](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-apply.yaml/badge.svg)](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-apply.yaml)
+
+
+[![Terraform Plan](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-plan.yaml/badge.svg?branch=main)](https://github.com/hyorch/terraform_github-actions/actions/workflows/terraform-plan.yaml)
 
 
 
