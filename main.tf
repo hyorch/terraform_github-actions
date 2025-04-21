@@ -8,10 +8,12 @@ resource "aws_iam_user" "usu01" {
 
 
 resource "aws_iam_user" "usu02" {
+
   name = "usu03"
   tags = {
     manual : false
     terraform = true
   }
+
 }
 
