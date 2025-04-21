@@ -9,11 +9,11 @@ terraform {
 
   backend "s3" {
     #profile        = "HyorchAdmin"
-    bucket         = "hyorch-terraform-github-actions"
-    key            = "terraform.tfstate"
-    region         = "eu-west-1"    
+    bucket = "hyorch-terraform-github-actions"
+    key    = "terraform.tfstate"
+    region = "eu-west-1"
   }
- 
+
 }
 
 provider "aws" {
